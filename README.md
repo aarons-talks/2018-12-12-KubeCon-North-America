@@ -1,6 +1,6 @@
 # Kubernetes is Still Hard for Developers, Let's Fix That!
 
-This repository has demo code for my [KubeCon North America 2018 talk](https://sched.co/GrTQ).
+This repository has demo code for my [KubeCon North America 2018 talk](https://sched.co/GrTQ). You can find the slides for this talk at https://cda.ms/L2.
 
 This demo turns the ["hello world" Flask application](http://flask.pocoo.org/) into a Kubernetes-ready app, and then deploys it. It does everything with [draft](https://draft.sh) and uses Minikube so that almost everything is local (so that I don't get bitten by Wifi :smiling:).
 
