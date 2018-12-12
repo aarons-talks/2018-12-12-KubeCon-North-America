@@ -16,7 +16,7 @@ draft create
 
 ## Step 2 - Set Up Docker Environment
 
-For minikube, run this in your terminal to set up all the environment variables draft needs:
+For Minikube, run this in your terminal to set up all the environment variables draft needs:
 
 ```console
 eval $(minikube docker-env)
