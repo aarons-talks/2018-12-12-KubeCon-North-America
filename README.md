@@ -27,20 +27,34 @@ eval $(minikube docker-env)
 This command will build and push the docker image, and then automatically open a proxy to the running app :smile:. After the proxy is open, the command line output will tell you the proxy port. Set that value to the `DRAFT_PORT` environment variable.
 
 ```console
-draft up --auto-connect
+draft up
 ```
 
-## Step 4 - Make a Request to the Flask App
+## Step 4 - See Your Build in the Build History
 
-After you've opened up the proxy and set the `DRAFT_PORT` env. var, do a `curl` to it:
+After your build & deploy succeeded, draft creates **release** and a **log** with all the builds you did for that release. Every time you do a `draft up`, you'll see another build in the log:
 
 ```console
-curl localhost:${DRAFT_PORT}
+draft history
 ```
 
-Next, change the code and re-run `draft up --auto-connect` to get a new image built and deployed with your changes.
+## Step 5 - Create the Tunneling Proxy and Make a Request to the Flask App
 
-## Step 5 - Clean Up
+Draft can run a local server that tunnels requests into your app running in a Kubernetes pod. Start the server with:
+
+```console
+draft connect -p 8080:8080
+```
+
+Then, in a different terminal, run:
+
+```console
+curl localhost:8080
+```
+
+Whenever you want, you can change the code, re-run `draft up` and `draft up` and continue making `curl` requests.
+
+## Step 6 - Clean Up
 
 Clean up your app from the cluster with:
 
@@ -48,7 +62,7 @@ Clean up your app from the cluster with:
 draft delete
 ```
 
-And clean up the files that Draft created with:
+And clean up the local files that Draft created (when you ran `draft init`) with:
 
 ```console
 make clean
