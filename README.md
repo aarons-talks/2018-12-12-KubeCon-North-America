@@ -11,7 +11,7 @@ _You'll need a [minikube](https://kubernetes.io/docs/tasks/tools/install-minikub
 This will set up all the files in your local repo you need to get started:
 
 ```console
-draft create
+draft create --app kubecon2018
 ```
 
 ## Step 2 - Set Up Docker Environment
@@ -39,3 +39,17 @@ curl localhost:${DRAFT_PORT}
 ```
 
 Next, change the code and re-run `draft up --auto-connect` to get a new image built and deployed with your changes.
+
+## Step 5 - Clean Up
+
+Clean up your app from the cluster with:
+
+```console
+draft delete
+```
+
+And clean up the files that Draft created with:
+
+```console
+make clean
+```
