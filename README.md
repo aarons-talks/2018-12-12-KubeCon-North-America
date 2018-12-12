@@ -16,10 +16,10 @@ draft create --app kubecon2018
 
 ## Step 2 - Set Up Docker Environment
 
-For Minikube, run this in your terminal to set up all the environment variables draft needs:
+For Minikube, run this to set up your docker environment for draft:
 
 ```console
-eval $(minikube docker-env)
+make setup
 ```
 
 ## Step 3 - Build and Deploy the App!
